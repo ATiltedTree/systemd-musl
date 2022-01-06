@@ -1,4 +1,4 @@
-From c50689064b45b6f0afa4921c3f7474431c579f85 Mon Sep 17 00:00:00 2001
+From 01c6197e631d0b0e3630b03d8a4ce9eee980903f Mon Sep 17 00:00:00 2001
 From: Alexander Kanavin <alex.kanavin@gmail.com>
 Date: Sat, 22 May 2021 20:26:24 +0200
 Subject: [PATCH 02/18] add fallback parse_printf_format implementation
@@ -22,7 +22,7 @@ Signed-off-by: Scott Murray <scott.murray@konsulko.com>
  create mode 100644 src/basic/parse-printf-format.h
 
 diff --git a/meson.build b/meson.build
-index c0cbadecb1..8caf01f2ef 100644
+index c6f71673f1..21fe5503c3 100644
 --- a/meson.build
 +++ b/meson.build
 @@ -686,6 +686,7 @@ endif

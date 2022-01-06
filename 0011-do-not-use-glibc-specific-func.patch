@@ -1,4 +1,4 @@
-From 1d00a20bed50da80120ca588ab20bbb2fa39b0f7 Mon Sep 17 00:00:00 2001
+From 878da3fe74eccddc2197afe9f3d791d235d2ae67 Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:07:24 +0100
 Subject: [PATCH 11/18] do not use glibc specific func

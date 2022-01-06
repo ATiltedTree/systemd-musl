@@ -1,4 +1,4 @@
-From 8d8b0194244958ec440f8fd9717da2760a078083 Mon Sep 17 00:00:00 2001
+From 7daf5a8ea4747d49812d964bcd175e11adf333f7 Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:07:49 +0100
 Subject: [PATCH 12/18] add glibc specific typedef
