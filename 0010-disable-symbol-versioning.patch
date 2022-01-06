@@ -1,0 +1,25 @@
+From 7cd1bf98f8ce0901f225f6f6c210c29b184197f3 Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Thu, 6 Jan 2022 23:06:37 +0100
+Subject: [PATCH 10/18] disable symbol versioning
+
+---
+ src/locale/localed.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/locale/localed.c b/src/locale/localed.c
+index c228385d0e..44ed243de9 100644
+--- a/src/locale/localed.c
++++ b/src/locale/localed.c
+@@ -566,7 +566,7 @@ static void log_xkb(struct xkb_context *ctx, enum xkb_log_level lvl, const char
+ 
+ #define LOAD_SYMBOL(symbol, dl, name)                                   \
+         ({                                                              \
+-                (symbol) = (typeof(symbol)) dlvsym((dl), (name), "V_0.5.0"); \
++                (symbol) = (typeof(symbol)) dlsym((dl), (name)); \
+                 (symbol) ? 0 : -EOPNOTSUPP;                             \
+         })
+ 
+-- 
+2.34.1
+

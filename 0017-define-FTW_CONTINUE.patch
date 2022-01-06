@@ -1,0 +1,27 @@
+From 35d63a17de36286a95dfbeac0412a258d0cfb09e Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Thu, 6 Jan 2022 23:09:54 +0100
+Subject: [PATCH 17/18] define FTW_CONTINUE
+
+---
+ src/test/test-recurse-dir.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/test/test-recurse-dir.c b/src/test/test-recurse-dir.c
+index 2c2120b136..7470e3d8ab 100644
+--- a/src/test/test-recurse-dir.c
++++ b/src/test/test-recurse-dir.c
+@@ -7,6 +7,10 @@
+ #include "strv.h"
+ #include "tests.h"
+ 
++#ifndef FTW_CONTINUE
++#define FTW_CONTINUE 0
++#endif
++
+ static char **list_nftw = NULL;
+ 
+ static int nftw_cb(
+-- 
+2.34.1
+

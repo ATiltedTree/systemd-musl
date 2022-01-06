@@ -1,0 +1,28 @@
+From 8d8b0194244958ec440f8fd9717da2760a078083 Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Thu, 6 Jan 2022 23:07:49 +0100
+Subject: [PATCH 12/18] add glibc specific typedef
+
+---
+ src/basic/sort-util.h | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/src/basic/sort-util.h b/src/basic/sort-util.h
+index cb448df109..0720c431e2 100644
+--- a/src/basic/sort-util.h
++++ b/src/basic/sort-util.h
+@@ -5,6 +5,11 @@
+ 
+ #include "macro.h"
+ 
++#ifndef __GLIBC__
++typedef int (*comparison_fn_t)(const void *, const void *);
++#endif
++
++
+ /* This is the same as glibc's internal __compar_d_fn_t type. glibc exports a public comparison_fn_t, for the
+  * external type __compar_fn_t, but doesn't do anything similar for __compar_d_fn_t. Let's hence do that
+  * ourselves, picking a name that is obvious, but likely enough to not clash with glibc's choice of naming if
+-- 
+2.34.1
+

@@ -1,0 +1,25 @@
+From 0a252cc300692396cb61c4e296f96559f1fe0579 Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Thu, 6 Jan 2022 23:05:33 +0100
+Subject: [PATCH 08/18] replace kernel with userspace header
+
+---
+ src/basic/missing_prctl.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/basic/missing_prctl.h b/src/basic/missing_prctl.h
+index ab851306ba..c526c18916 100644
+--- a/src/basic/missing_prctl.h
++++ b/src/basic/missing_prctl.h
+@@ -1,7 +1,7 @@
+ /* SPDX-License-Identifier: LGPL-2.1-or-later */
+ #pragma once
+ 
+-#include <linux/prctl.h>
++#include <sys/prctl.h>
+ 
+ /* 58319057b7847667f0c9585b9de0e8932b0fdb08 (4.3) */
+ #ifndef PR_CAP_AMBIENT
+-- 
+2.34.1
+

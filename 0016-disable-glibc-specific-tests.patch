@@ -1,0 +1,32 @@
+From 8b8aaa3b2bdc998316f5f5e2fd68fb18932d2f85 Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Thu, 6 Jan 2022 23:09:31 +0100
+Subject: [PATCH 16/18] disable glibc specific tests
+
+---
+ src/test/test-cpu-set-util.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/test/test-cpu-set-util.c b/src/test/test-cpu-set-util.c
+index a0660f579e..0f41e8d99a 100644
+--- a/src/test/test-cpu-set-util.c
++++ b/src/test/test-cpu-set-util.c
+@@ -6,6 +6,7 @@
+ #include "tests.h"
+ #include "macro.h"
+ 
++#ifdef __GLIBC__
+ TEST(parse_cpu_set) {
+         CPUSet c = {};
+         _cleanup_free_ char *str = NULL;
+@@ -208,6 +209,7 @@ TEST(parse_cpu_set) {
+         str = mfree(str);
+         cpu_set_reset(&c);
+ }
++#endif
+ 
+ TEST(parse_cpu_set_extend) {
+         CPUSet c = {};
+-- 
+2.34.1
+

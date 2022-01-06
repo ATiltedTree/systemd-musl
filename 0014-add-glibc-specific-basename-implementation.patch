@@ -1,0 +1,28 @@
+From 1a61e2fe953d52e6180be3f1bde5f5364a26bde8 Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Thu, 6 Jan 2022 23:08:43 +0100
+Subject: [PATCH 14/18] add glibc specific basename implementation
+
+---
+ src/machine/machine-dbus.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/src/machine/machine-dbus.c b/src/machine/machine-dbus.c
+index 8f11afd65b..a2b57deb7a 100644
+--- a/src/machine/machine-dbus.c
++++ b/src/machine/machine-dbus.c
+@@ -10,6 +10,11 @@
+ #include <libgen.h>
+ #undef basename
+ 
++#if !defined(__GLIBC__)
++#include <string.h>
++#define basename(src) (strrchr(src,'/') ? strrchr(src,'/')+1 : src)
++#endif
++
+ #include "alloc-util.h"
+ #include "bus-common-errors.h"
+ #include "bus-get-properties.h"
+-- 
+2.34.1
+

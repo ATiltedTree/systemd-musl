@@ -1,0 +1,46 @@
+From 1d00a20bed50da80120ca588ab20bbb2fa39b0f7 Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Thu, 6 Jan 2022 23:07:24 +0100
+Subject: [PATCH 11/18] do not use glibc specific func
+
+---
+ src/import/curl-util.c | 11 +++--------
+ 1 file changed, 3 insertions(+), 8 deletions(-)
+
+diff --git a/src/import/curl-util.c b/src/import/curl-util.c
+index d6a16b4f57..f0ea659e5e 100644
+--- a/src/import/curl-util.c
++++ b/src/import/curl-util.c
+@@ -352,7 +352,6 @@ int curl_header_strdup(const void *contents, size_t sz, const char *field, char
+ }
+ 
+ int curl_parse_http_time(const char *t, usec_t *ret) {
+-        _cleanup_(freelocalep) locale_t loc = (locale_t) 0;
+         const char *e;
+         struct tm tm;
+         time_t v;
+@@ -360,18 +359,14 @@ int curl_parse_http_time(const char *t, usec_t *ret) {
+         assert(t);
+         assert(ret);
+ 
+-        loc = newlocale(LC_TIME_MASK, "C", (locale_t) 0);
+-        if (loc == (locale_t) 0)
+-                return -errno;
+-
+         /* RFC822 */
+-        e = strptime_l(t, "%a, %d %b %Y %H:%M:%S %Z", &tm, loc);
++        e = strptime(t, "%a, %d %b %Y %H:%M:%S %Z", &tm);
+         if (!e || *e != 0)
+                 /* RFC 850 */
+-                e = strptime_l(t, "%A, %d-%b-%y %H:%M:%S %Z", &tm, loc);
++                e = strptime(t, "%A, %d-%b-%y %H:%M:%S %Z", &tm);
+         if (!e || *e != 0)
+                 /* ANSI C */
+-                e = strptime_l(t, "%a %b %d %H:%M:%S %Y", &tm, loc);
++                e = strptime(t, "%a %b %d %H:%M:%S %Y", &tm);
+         if (!e || *e != 0)
+                 return -EINVAL;
+ 
+-- 
+2.34.1
+
