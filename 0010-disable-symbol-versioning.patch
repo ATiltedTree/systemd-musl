@@ -1,7 +1,7 @@
 From d9da3699abda8b5061e989854f4682f095e2cf5a Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:06:37 +0100
-Subject: [PATCH 10/18] disable symbol versioning
+Subject: [PATCH 10/20] disable symbol versioning
 
 ---
  src/locale/localed.c | 2 +-

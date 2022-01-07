@@ -1,7 +1,7 @@
 From 17aa33ea2bb5bc010ffbd885b884623c5619fcea Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:08:43 +0100
-Subject: [PATCH 14/18] add glibc specific basename implementation
+Subject: [PATCH 14/20] add glibc specific basename implementation
 
 ---
  src/machine/machine-dbus.c | 5 +++++

@@ -1,7 +1,7 @@
 From 97b21ea483efd0b3d73fb72b736ead47f1a603dc Mon Sep 17 00:00:00 2001
 From: Chen Qi <Qi.Chen@windriver.com>
 Date: Mon, 25 Feb 2019 14:56:21 +0800
-Subject: [PATCH 03/18] don't fail if GLOB_BRACE and GLOB_ALTDIRFUNC is not
+Subject: [PATCH 03/20] don't fail if GLOB_BRACE and GLOB_ALTDIRFUNC is not
  defined
 
 If the standard library doesn't provide brace

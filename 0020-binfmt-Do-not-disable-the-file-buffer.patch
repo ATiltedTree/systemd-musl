@@ -1,0 +1,34 @@
+From 52ed613ce7ae05c1414bdfe61fd1b0c03fc52e91 Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Fri, 7 Jan 2022 19:51:44 +0100
+Subject: [PATCH 20/20] binfmt: Do not disable the file buffer
+
+---
+ src/binfmt/binfmt.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/binfmt/binfmt.c b/src/binfmt/binfmt.c
+index 18231c2618..0902578bea 100644
+--- a/src/binfmt/binfmt.c
++++ b/src/binfmt/binfmt.c
+@@ -29,7 +29,7 @@ static bool arg_unregister = false;
+ 
+ static int delete_rule(const char *rulename) {
+         const char *fn = strjoina("/proc/sys/fs/binfmt_misc/", rulename);
+-        return write_string_file(fn, "-1", WRITE_STRING_FILE_DISABLE_BUFFER);
++        return write_string_file(fn, "-1", 0);
+ }
+ 
+ static int apply_rule(const char *filename, unsigned line, const char *rule) {
+@@ -59,7 +59,7 @@ static int apply_rule(const char *filename, unsigned line, const char *rule) {
+         if (r >= 0)
+                 log_debug("%s:%u: Rule '%s' deleted.", filename, line, rulename);
+ 
+-        r = write_string_file("/proc/sys/fs/binfmt_misc/register", rule, WRITE_STRING_FILE_DISABLE_BUFFER);
++        r = write_string_file("/proc/sys/fs/binfmt_misc/register", rule, 0);
+         if (r < 0)
+                 return log_error_errno(r, "%s:%u: Failed to add binary format '%s': %m",
+                                        filename, line, rulename);
+-- 
+2.34.1
+
