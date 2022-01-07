@@ -1,0 +1,28 @@
+From 09bd59e348056631c482f3e47b1b937612b6430d Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Fri, 7 Jan 2022 21:57:57 +0100
+Subject: [PATCH 19/19] Do not disable buffering on musl. It causes issues.
+
+---
+ src/basic/fileio.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/basic/fileio.c b/src/basic/fileio.c
+index 8d92da327e..18d7e0754d 100644
+--- a/src/basic/fileio.c
++++ b/src/basic/fileio.c
+@@ -305,9 +305,10 @@ int write_string_file_ts(
+                 safe_close(fd);
+                 goto fail;
+         }
+-
++#ifdef __GLIBC__
+         if (flags & WRITE_STRING_FILE_DISABLE_BUFFER)
+                 setvbuf(f, NULL, _IONBF, 0);
++#endif
+ 
+         r = write_string_stream_ts(f, line, flags, ts);
+         if (r < 0)
+-- 
+2.34.1
+
