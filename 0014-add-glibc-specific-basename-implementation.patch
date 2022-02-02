@@ -1,4 +1,4 @@
-From 17aa33ea2bb5bc010ffbd885b884623c5619fcea Mon Sep 17 00:00:00 2001
+From aad80de6940d6704b957eb15c6ee8c8a3b3ff91a Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:08:43 +0100
 Subject: [PATCH 14/19] add glibc specific basename implementation
@@ -24,5 +24,5 @@ index 8f11afd65b..a2b57deb7a 100644
  #include "bus-common-errors.h"
  #include "bus-get-properties.h"
 -- 
-2.34.1
+2.35.1
 

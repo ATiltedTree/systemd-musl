@@ -1,4 +1,4 @@
-From 4e2e7040c6f70a742a03f53c609d2d1e2d24e910 Mon Sep 17 00:00:00 2001
+From f568e1604a700877bf6c2efe6525e80771b8bf64 Mon Sep 17 00:00:00 2001
 From: Chen Qi <Qi.Chen@windriver.com>
 Date: Wed, 28 Feb 2018 21:25:22 -0800
 Subject: [PATCH 06/19] test-sizeof.c: Disable tests for missing typedefs in
@@ -46,5 +46,5 @@ index f349852553..2717d1c22c 100644
          info(enum Enum);
          info(enum BigEnum);
 -- 
-2.34.1
+2.35.1
 

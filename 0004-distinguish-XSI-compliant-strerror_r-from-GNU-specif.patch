@@ -1,4 +1,4 @@
-From f8c6d14813c6fd8bde857d70d542faa8b033c2f1 Mon Sep 17 00:00:00 2001
+From fdf074e30c7bc212e3579a24c28c1877214b1648 Mon Sep 17 00:00:00 2001
 From: Chen Qi <Qi.Chen@windriver.com>
 Date: Tue, 10 Jul 2018 15:40:17 +0800
 Subject: [PATCH 04/19] distinguish XSI-compliant strerror_r from GNU-specifi
@@ -58,5 +58,5 @@ index 29bbce72bb..2c9138d87a 100644
                          char error[STRLEN("ERRNO=") + DECIMAL_STR_MAX(int) + 1];
  
 -- 
-2.34.1
+2.35.1
 

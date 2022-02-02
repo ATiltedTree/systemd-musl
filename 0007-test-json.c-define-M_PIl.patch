@@ -1,4 +1,4 @@
-From 3f8ce209d2c3e2bbc271d5395c9a4ec104655a97 Mon Sep 17 00:00:00 2001
+From 40cc8bc42b4508c6343a60d1768f936c3777cea9 Mon Sep 17 00:00:00 2001
 From: Chen Qi <Qi.Chen@windriver.com>
 Date: Mon, 25 Feb 2019 16:53:06 +0800
 Subject: [PATCH 07/19] test-json.c: define M_PIl
@@ -29,5 +29,5 @@ index b385edc269..5e5830238c 100644
          unsigned line = 0, column = 0;
          void *state = NULL;
 -- 
-2.34.1
+2.35.1
 

@@ -1,4 +1,4 @@
-From eb847d601b6743edb4f93fc2405a62f10ec75dfb Mon Sep 17 00:00:00 2001
+From 20b4d009a41537ad3e3a6f3384c44814002f9813 Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:09:54 +0100
 Subject: [PATCH 17/19] define FTW_CONTINUE
@@ -23,5 +23,5 @@ index 2c2120b136..7470e3d8ab 100644
  
  static int nftw_cb(
 -- 
-2.34.1
+2.35.1
 

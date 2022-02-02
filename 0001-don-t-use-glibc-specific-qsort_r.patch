@@ -1,4 +1,4 @@
-From caade381c9aa196e406339fb1ceefdec2b2f276f Mon Sep 17 00:00:00 2001
+From 100499b0f325b16ebf6c095ee904e1e77d8e3bd7 Mon Sep 17 00:00:00 2001
 From: Chen Qi <Qi.Chen@windriver.com>
 Date: Mon, 25 Feb 2019 13:41:41 +0800
 Subject: [PATCH 01/19] don't use glibc-specific qsort_r
@@ -161,5 +161,5 @@ index fe4785f3e5..827e1639c3 100644
  }
  
 -- 
-2.34.1
+2.35.1
 

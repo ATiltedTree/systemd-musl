@@ -1,4 +1,4 @@
-From b6067a4ec5245def30a431c9b74bb74d156b3c8b Mon Sep 17 00:00:00 2001
+From 1096f95bc30358f76419220a47b84ea512fd72c8 Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:10:34 +0100
 Subject: [PATCH 18/19] fixup network kernel/userspace header collisions
@@ -100,7 +100,7 @@ index 57e655154c..212b7b9e64 100644
  #include <linux/if_packet.h>
  #include <netinet/in.h>
 diff --git a/src/libsystemd-network/sd-dhcp6-client.c b/src/libsystemd-network/sd-dhcp6-client.c
-index d3c667974d..ec16314653 100644
+index 706904c720..902ab7e43e 100644
 --- a/src/libsystemd-network/sd-dhcp6-client.c
 +++ b/src/libsystemd-network/sd-dhcp6-client.c
 @@ -5,7 +5,6 @@
@@ -364,7 +364,7 @@ index 30b0855598..06e99b47bb 100644
  #include "conf-parser.h"
  #include "alloc-util.h"
 diff --git a/src/network/netdev/wireguard.c b/src/network/netdev/wireguard.c
-index af91dc6257..fc8e3b04ca 100644
+index 88f668753a..39eb090a9e 100644
 --- a/src/network/netdev/wireguard.c
 +++ b/src/network/netdev/wireguard.c
 @@ -6,7 +6,6 @@
@@ -503,5 +503,5 @@ index 65e003eb15..9e924bb1c7 100644
  #include <linux/pci_regs.h>
  
 -- 
-2.34.1
+2.35.1
 

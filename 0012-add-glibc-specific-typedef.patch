@@ -1,4 +1,4 @@
-From 7daf5a8ea4747d49812d964bcd175e11adf333f7 Mon Sep 17 00:00:00 2001
+From 4c9e539adfe5b9dd671722d010026f4eb5c4b67e Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:07:49 +0100
 Subject: [PATCH 12/19] add glibc specific typedef
@@ -24,5 +24,5 @@ index cb448df109..0720c431e2 100644
   * external type __compar_fn_t, but doesn't do anything similar for __compar_d_fn_t. Let's hence do that
   * ourselves, picking a name that is obvious, but likely enough to not clash with glibc's choice of naming if
 -- 
-2.34.1
+2.35.1
 
