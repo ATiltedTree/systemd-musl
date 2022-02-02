@@ -1,7 +1,7 @@
 From ebb4d5f1a8029a0f7832470edabf82e02d2170b7 Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:08:18 +0100
-Subject: [PATCH 13/19] fixup casts
+Subject: [PATCH 13/20] fixup casts
 
 ---
  src/basic/recurse-dir.c | 2 +-

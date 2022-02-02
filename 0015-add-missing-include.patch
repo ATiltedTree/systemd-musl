@@ -1,7 +1,7 @@
 From b4c7bc904069e5ef0e8baae0fc85b40182143684 Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:09:06 +0100
-Subject: [PATCH 15/19] add missing include
+Subject: [PATCH 15/20] add missing include
 
 ---
  src/shared/mkdir-label.c | 2 ++

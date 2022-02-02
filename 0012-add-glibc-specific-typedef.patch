@@ -1,7 +1,7 @@
 From 4c9e539adfe5b9dd671722d010026f4eb5c4b67e Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:07:49 +0100
-Subject: [PATCH 12/19] add glibc specific typedef
+Subject: [PATCH 12/20] add glibc specific typedef
 
 ---
  src/basic/sort-util.h | 5 +++++
