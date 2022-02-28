@@ -1,7 +1,7 @@
 From 0bbf97f807c99ecb6b118a788cf774aa99ff207a Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:07:24 +0100
-Subject: [PATCH 11/20] do not use glibc specific func
+Subject: [PATCH 11/21] do not use glibc specific func
 
 ---
  src/import/curl-util.c | 11 +++--------

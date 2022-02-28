@@ -1,7 +1,7 @@
 From 0b376c7b1b9bc2a2c844dff1c4b89f21797b418f Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Fri, 7 Jan 2022 21:57:57 +0100
-Subject: [PATCH 19/20] Do not disable buffering on musl. It causes issues.
+Subject: [PATCH 19/21] Do not disable buffering on musl. It causes issues.
 
 ---
  src/basic/fileio.c | 3 ++-

@@ -1,7 +1,7 @@
 From 20b4d009a41537ad3e3a6f3384c44814002f9813 Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:09:54 +0100
-Subject: [PATCH 17/20] define FTW_CONTINUE
+Subject: [PATCH 17/21] define FTW_CONTINUE
 
 ---
  src/test/test-recurse-dir.c | 4 ++++

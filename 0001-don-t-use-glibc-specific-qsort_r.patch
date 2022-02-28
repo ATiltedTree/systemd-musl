@@ -1,7 +1,7 @@
 From 100499b0f325b16ebf6c095ee904e1e77d8e3bd7 Mon Sep 17 00:00:00 2001
 From: Chen Qi <Qi.Chen@windriver.com>
 Date: Mon, 25 Feb 2019 13:41:41 +0800
-Subject: [PATCH 01/20] don't use glibc-specific qsort_r
+Subject: [PATCH 01/21] don't use glibc-specific qsort_r
 
 Upstream-Status: Inappropriate [musl specific]
 

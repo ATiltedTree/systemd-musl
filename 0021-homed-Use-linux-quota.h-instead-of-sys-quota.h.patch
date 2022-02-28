@@ -1,0 +1,37 @@
+From 0af157668ab658bf391165e048701c09cd6cd961 Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Mon, 28 Feb 2022 23:35:00 +0100
+Subject: [PATCH 21/21] homed: Use linux/quota.h instead of sys/quota.h
+
+---
+ src/home/homed-home.c     | 2 +-
+ src/home/homework-quota.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/home/homed-home.c b/src/home/homed-home.c
+index 470c7f07f6..4d1eedda57 100644
+--- a/src/home/homed-home.c
++++ b/src/home/homed-home.c
+@@ -5,7 +5,7 @@
+ #endif
+ 
+ #include <sys/mman.h>
+-#include <sys/quota.h>
++#include <linux/quota.h>
+ #include <sys/vfs.h>
+ 
+ #include "blockdev-util.h"
+diff --git a/src/home/homework-quota.c b/src/home/homework-quota.c
+index 7001870dfb..02a12431ab 100644
+--- a/src/home/homework-quota.c
++++ b/src/home/homework-quota.c
+@@ -1,5 +1,5 @@
+ /* SPDX-License-Identifier: LGPL-2.1-or-later */
+-#include <sys/quota.h>
++#include <linux/quota.h>
+ 
+ #include "blockdev-util.h"
+ #include "btrfs-util.h"
+-- 
+2.35.1
+
