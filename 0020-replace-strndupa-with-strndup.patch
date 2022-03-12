@@ -1,4 +1,4 @@
-From 54ae5d1d13cfee8b4a4af9f720cfc3b0e91f2daf Mon Sep 17 00:00:00 2001
+From 3c8c95bfdec4c14e65d2d0e278d3d8625e8491db Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Wed, 2 Feb 2022 18:21:49 +0100
 Subject: [PATCH 20/21] replace strndupa with strndup

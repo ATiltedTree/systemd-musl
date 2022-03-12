@@ -1,4 +1,4 @@
-From a15cb1845188d309f5024cfe5463bd282b356ed4 Mon Sep 17 00:00:00 2001
+From 094ae446b175f77f86dd7bd00eec537b039fc23d Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:06:37 +0100
 Subject: [PATCH 10/21] disable symbol versioning

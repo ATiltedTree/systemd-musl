@@ -1,4 +1,4 @@
-From fdf074e30c7bc212e3579a24c28c1877214b1648 Mon Sep 17 00:00:00 2001
+From b4a5d95ef4888c4fd8d48cd41efdb8c832ea8b84 Mon Sep 17 00:00:00 2001
 From: Chen Qi <Qi.Chen@windriver.com>
 Date: Tue, 10 Jul 2018 15:40:17 +0800
 Subject: [PATCH 04/21] distinguish XSI-compliant strerror_r from GNU-specifi
@@ -41,10 +41,10 @@ index bdfa145ab7..61928f4bf3 100644
                          free(m);
                          k *= 2;
 diff --git a/src/libsystemd/sd-journal/journal-send.c b/src/libsystemd/sd-journal/journal-send.c
-index 29bbce72bb..2c9138d87a 100644
+index e6ceba54f9..285ebbc9ef 100644
 --- a/src/libsystemd/sd-journal/journal-send.c
 +++ b/src/libsystemd/sd-journal/journal-send.c
-@@ -348,7 +348,12 @@ static int fill_iovec_perror_and_send(const char *message, int skip, struct iove
+@@ -370,7 +370,12 @@ static int fill_iovec_perror_and_send(const char *message, int skip, struct iove
                  char* j;
  
                  errno = 0;

@@ -1,4 +1,4 @@
-From 0af157668ab658bf391165e048701c09cd6cd961 Mon Sep 17 00:00:00 2001
+From 294566975cbaac04e0118285fa30723ac3d0ad1a Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Mon, 28 Feb 2022 23:35:00 +0100
 Subject: [PATCH 21/21] homed: Use linux/quota.h instead of sys/quota.h

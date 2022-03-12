@@ -1,4 +1,4 @@
-From f568e1604a700877bf6c2efe6525e80771b8bf64 Mon Sep 17 00:00:00 2001
+From e43d27399341f4f184ce5958cfc1df846ba7f121 Mon Sep 17 00:00:00 2001
 From: Chen Qi <Qi.Chen@windriver.com>
 Date: Wed, 28 Feb 2018 21:25:22 -0800
 Subject: [PATCH 06/21] test-sizeof.c: Disable tests for missing typedefs in

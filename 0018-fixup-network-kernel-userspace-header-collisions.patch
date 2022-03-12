@@ -1,4 +1,4 @@
-From 1096f95bc30358f76419220a47b84ea512fd72c8 Mon Sep 17 00:00:00 2001
+From 169ae1b557b1527ba17d06ec6829c2a8fe155999 Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:10:34 +0100
 Subject: [PATCH 18/21] fixup network kernel/userspace header collisions
@@ -100,7 +100,7 @@ index 57e655154c..212b7b9e64 100644
  #include <linux/if_packet.h>
  #include <netinet/in.h>
 diff --git a/src/libsystemd-network/sd-dhcp6-client.c b/src/libsystemd-network/sd-dhcp6-client.c
-index 706904c720..902ab7e43e 100644
+index 84bc739bba..1853611a7d 100644
 --- a/src/libsystemd-network/sd-dhcp6-client.c
 +++ b/src/libsystemd-network/sd-dhcp6-client.c
 @@ -5,7 +5,6 @@
@@ -148,7 +148,7 @@ index 5d94aa1d68..baea9daaf3 100644
  #include "alloc-util.h"
  #include "bond.h"
 diff --git a/src/network/netdev/bridge.c b/src/network/netdev/bridge.c
-index 64d65493ca..2e826c2546 100644
+index b974f2ae0a..e6894e9b1c 100644
 --- a/src/network/netdev/bridge.c
 +++ b/src/network/netdev/bridge.c
 @@ -2,7 +2,6 @@
@@ -376,7 +376,7 @@ index 88f668753a..39eb090a9e 100644
  
  #include "sd-resolve.h"
 diff --git a/src/network/netdev/xfrm.c b/src/network/netdev/xfrm.c
-index 4b7e73b37a..014723123c 100644
+index ef5e735b2b..8f148ab0cd 100644
 --- a/src/network/netdev/xfrm.c
 +++ b/src/network/netdev/xfrm.c
 @@ -1,7 +1,5 @@
@@ -429,7 +429,7 @@ index cb9c428ae9..98ddb18e4f 100644
  #include "alloc-util.h"
  #include "dhcp-client-internal.h"
 diff --git a/src/network/networkd-link.c b/src/network/networkd-link.c
-index 7bc391d68d..99b512a353 100644
+index b62a154828..be32f4431b 100644
 --- a/src/network/networkd-link.c
 +++ b/src/network/networkd-link.c
 @@ -1,9 +1,9 @@
