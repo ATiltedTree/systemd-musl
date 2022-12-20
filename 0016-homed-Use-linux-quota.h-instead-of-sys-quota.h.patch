@@ -1,7 +1,7 @@
-From 294566975cbaac04e0118285fa30723ac3d0ad1a Mon Sep 17 00:00:00 2001
+From 5a40ed1068269064dfa41c67323d03033d71bd54 Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Mon, 28 Feb 2022 23:35:00 +0100
-Subject: [PATCH 21/21] homed: Use linux/quota.h instead of sys/quota.h
+Subject: [PATCH 16/23] homed: Use linux/quota.h instead of sys/quota.h
 
 ---
  src/home/homed-home.c     | 2 +-
@@ -9,7 +9,7 @@ Subject: [PATCH 21/21] homed: Use linux/quota.h instead of sys/quota.h
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/src/home/homed-home.c b/src/home/homed-home.c
-index 470c7f07f6..4d1eedda57 100644
+index 19be186400..4a38e85325 100644
 --- a/src/home/homed-home.c
 +++ b/src/home/homed-home.c
 @@ -5,7 +5,7 @@
@@ -22,7 +22,7 @@ index 470c7f07f6..4d1eedda57 100644
  
  #include "blockdev-util.h"
 diff --git a/src/home/homework-quota.c b/src/home/homework-quota.c
-index 7001870dfb..02a12431ab 100644
+index 574d1556af..a6f6cee24e 100644
 --- a/src/home/homework-quota.c
 +++ b/src/home/homework-quota.c
 @@ -1,5 +1,5 @@
@@ -33,5 +33,5 @@ index 7001870dfb..02a12431ab 100644
  #include "blockdev-util.h"
  #include "btrfs-util.h"
 -- 
-2.35.1
+2.39.0
 

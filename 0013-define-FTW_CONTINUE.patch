@@ -1,7 +1,7 @@
-From 62d7a9b370bdd98412d3f2ebd5b501f6894c8d3c Mon Sep 17 00:00:00 2001
+From 39c0aad534f4b8adc172bbd721f749893701bb3c Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:09:54 +0100
-Subject: [PATCH 17/21] define FTW_CONTINUE
+Subject: [PATCH 13/23] define FTW_CONTINUE
 
 ---
  src/test/test-recurse-dir.c | 4 ++++
@@ -23,5 +23,5 @@ index 2c2120b136..7470e3d8ab 100644
  
  static int nftw_cb(
 -- 
-2.35.1
+2.39.0
 

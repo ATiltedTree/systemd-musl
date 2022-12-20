@@ -1,0 +1,25 @@
+From d8d2c9d33a9a5e6122e3df36a0f2237f1f9aac2a Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Sat, 14 May 2022 11:29:58 +0200
+Subject: [PATCH 17/23] musl: Correct format for rlim_t
+
+---
+ src/basic/format-util.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/basic/format-util.h b/src/basic/format-util.h
+index 8719df3e29..65305dd2b8 100644
+--- a/src/basic/format-util.h
++++ b/src/basic/format-util.h
+@@ -35,7 +35,7 @@ assert_cc(sizeof(gid_t) == sizeof(uint32_t));
+ #endif
+ 
+ #if SIZEOF_RLIM_T == 8
+-#  define RLIM_FMT "%" PRIu64
++#  define RLIM_FMT "%l" PRIu64
+ #elif SIZEOF_RLIM_T == 4
+ #  define RLIM_FMT "%" PRIu32
+ #else
+-- 
+2.39.0
+

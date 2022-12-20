@@ -1,0 +1,25 @@
+From de3bf14715969badd0bbe3fad839c7997534e202 Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Sun, 2 Oct 2022 10:44:51 +0200
+Subject: [PATCH 20/23] musl: Use strndupa_safe
+
+---
+ src/udev/udev-builtin-path_id.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/udev/udev-builtin-path_id.c b/src/udev/udev-builtin-path_id.c
+index d58a3d5d60..20c6ac4fce 100644
+--- a/src/udev/udev-builtin-path_id.c
++++ b/src/udev/udev-builtin-path_id.c
+@@ -571,7 +571,7 @@ static int find_real_nvme_parent(sd_device *dev, sd_device **ret) {
+                 return -ENXIO;
+ 
+         end += strspn(end, DIGITS);
+-        sysname = strndupa(sysname, end - sysname);
++        sysname = strndupa_safe(sysname, end - sysname);
+ 
+         r = sd_device_new_from_subsystem_sysname(&nvme, "nvme", sysname);
+         if (r < 0)
+-- 
+2.39.0
+

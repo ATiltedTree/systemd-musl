@@ -1,0 +1,26 @@
+From f896aa82b8f8c90372ebd7589e41057cdf25a365 Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Fri, 23 Sep 2022 21:46:25 +0200
+Subject: [PATCH 19/23] Revert "meson: Get objcopy location from compiler"
+
+This reverts commit 2f2b07226751827303a88f3a301f2d834f3fb97b.
+---
+ src/boot/efi/meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/boot/efi/meson.build b/src/boot/efi/meson.build
+index 21218bdf94..91800f936a 100644
+--- a/src/boot/efi/meson.build
++++ b/src/boot/efi/meson.build
+@@ -54,7 +54,7 @@ if not cc.has_header_symbol('efi.h', 'EFI_IMAGE_MACHINE_X64',
+         subdir_done()
+ endif
+ 
+-objcopy = run_command(cc.cmd_array(), '-print-prog-name=objcopy', check: true).stdout().strip()
++objcopy = find_program('objcopy')
+ 
+ efi_ld = get_option('efi-ld')
+ if efi_ld == 'auto'
+-- 
+2.39.0
+

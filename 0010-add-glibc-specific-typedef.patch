@@ -1,14 +1,14 @@
-From c0efbe8bfcf49776130b59368884278fddf9cbef Mon Sep 17 00:00:00 2001
+From d4ada45c0dc8ba8b0cc2984e87ce6fd83b29c85c Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:07:49 +0100
-Subject: [PATCH 12/21] add glibc specific typedef
+Subject: [PATCH 10/23] add glibc specific typedef
 
 ---
  src/basic/sort-util.h | 5 +++++
  1 file changed, 5 insertions(+)
 
 diff --git a/src/basic/sort-util.h b/src/basic/sort-util.h
-index cb448df109..0720c431e2 100644
+index f0bf246aa3..744ebe0a35 100644
 --- a/src/basic/sort-util.h
 +++ b/src/basic/sort-util.h
 @@ -5,6 +5,11 @@
@@ -24,5 +24,5 @@ index cb448df109..0720c431e2 100644
   * external type __compar_fn_t, but doesn't do anything similar for __compar_d_fn_t. Let's hence do that
   * ourselves, picking a name that is obvious, but likely enough to not clash with glibc's choice of naming if
 -- 
-2.35.1
+2.39.0
 

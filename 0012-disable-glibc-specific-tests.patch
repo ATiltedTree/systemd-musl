@@ -1,7 +1,7 @@
-From 39280f12371d6a9aad07bee571aa41d92f7249f7 Mon Sep 17 00:00:00 2001
+From a7ec96c047e9f517a30415dcc9709303f4071c5c Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:09:31 +0100
-Subject: [PATCH 16/21] disable glibc specific tests
+Subject: [PATCH 12/23] disable glibc specific tests
 
 ---
  src/test/test-cpu-set-util.c | 2 ++
@@ -28,5 +28,5 @@ index a0660f579e..0f41e8d99a 100644
  TEST(parse_cpu_set_extend) {
          CPUSet c = {};
 -- 
-2.35.1
+2.39.0
 

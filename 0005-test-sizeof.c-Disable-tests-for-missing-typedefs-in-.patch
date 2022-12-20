@@ -1,7 +1,7 @@
-From e43d27399341f4f184ce5958cfc1df846ba7f121 Mon Sep 17 00:00:00 2001
+From 0b62c7a5c4128ca52b5de079c1f3da9c08ba48ba Mon Sep 17 00:00:00 2001
 From: Chen Qi <Qi.Chen@windriver.com>
 Date: Wed, 28 Feb 2018 21:25:22 -0800
-Subject: [PATCH 06/21] test-sizeof.c: Disable tests for missing typedefs in
+Subject: [PATCH 05/23] test-sizeof.c: Disable tests for missing typedefs in
  musl
 
 Upstream-Status: Inappropriate [musl specific]
@@ -9,17 +9,18 @@ Upstream-Status: Inappropriate [musl specific]
 Signed-off-by: Khem Raj <raj.khem@gmail.com>
 Signed-off-by: Chen Qi <Qi.Chen@windriver.com>
 ---
- src/test/test-sizeof.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ src/test/test-sizeof.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/src/test/test-sizeof.c b/src/test/test-sizeof.c
-index f349852553..2717d1c22c 100644
+index 55bd81e22f..6c6ae5bd01 100644
 --- a/src/test/test-sizeof.c
 +++ b/src/test/test-sizeof.c
-@@ -55,8 +55,10 @@ int main(void) {
+@@ -55,8 +55,11 @@ int main(void) {
          info(unsigned);
-         info(long unsigned);
-         info(long long unsigned);
+         info(unsigned long);
+         info(unsigned long long);
++
 +#ifdef __GLIBC__
          info(__syscall_ulong_t);
          info(__syscall_slong_t);
@@ -27,7 +28,7 @@ index f349852553..2717d1c22c 100644
          info(intmax_t);
          info(uintmax_t);
  
-@@ -76,13 +78,17 @@ int main(void) {
+@@ -76,13 +79,17 @@ int main(void) {
          info(ssize_t);
          info(time_t);
          info(usec_t);
@@ -46,5 +47,5 @@ index f349852553..2717d1c22c 100644
          info(enum Enum);
          info(enum BigEnum);
 -- 
-2.35.1
+2.39.0
 

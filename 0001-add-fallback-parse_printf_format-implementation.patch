@@ -1,7 +1,7 @@
-From c52ff6a45f376f2321b868e9c8c083dafa58ef6c Mon Sep 17 00:00:00 2001
+From d0f6e780dcfe260eb756e8c292d8d217cb7e53f1 Mon Sep 17 00:00:00 2001
 From: Alexander Kanavin <alex.kanavin@gmail.com>
 Date: Sat, 22 May 2021 20:26:24 +0200
-Subject: [PATCH 02/21] add fallback parse_printf_format implementation
+Subject: [PATCH 01/23] add fallback parse_printf_format implementation
 
 Upstream-Status: Inappropriate [musl specific]
 
@@ -22,10 +22,10 @@ Signed-off-by: Scott Murray <scott.murray@konsulko.com>
  create mode 100644 src/basic/parse-printf-format.h
 
 diff --git a/meson.build b/meson.build
-index cb9936ee8b..ae53345260 100644
+index 35704947e3..7a6b6a6084 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -686,6 +686,7 @@ endif
+@@ -741,6 +741,7 @@ endif
  foreach header : ['crypt.h',
                    'linux/memfd.h',
                    'linux/vm_sockets.h',
@@ -34,10 +34,10 @@ index cb9936ee8b..ae53345260 100644
                    'valgrind/memcheck.h',
                    'valgrind/valgrind.h',
 diff --git a/src/basic/meson.build b/src/basic/meson.build
-index 49e1e7f43e..4131494bfa 100644
+index bfe52d5879..92360b32a3 100644
 --- a/src/basic/meson.build
 +++ b/src/basic/meson.build
-@@ -334,6 +334,11 @@ endforeach
+@@ -337,6 +337,11 @@ endforeach
  
  basic_sources += generated_gperf_headers
  
@@ -392,7 +392,7 @@ index 0000000000..47be7522d7
 +
 +#endif /* HAVE_PRINTF_H */
 diff --git a/src/basic/stdio-util.h b/src/basic/stdio-util.h
-index 69d7062ec6..f55c5aab2c 100644
+index f647f125ac..ee474f8248 100644
 --- a/src/basic/stdio-util.h
 +++ b/src/basic/stdio-util.h
 @@ -1,13 +1,13 @@
@@ -408,10 +408,10 @@ index 69d7062ec6..f55c5aab2c 100644
  #include "memory-util.h"
 +#include "parse-printf-format.h"
  
- #define snprintf_ok(buf, len, fmt, ...)                                \
-         ({                                                             \
+ #define snprintf_ok(buf, len, fmt, ...)                                 \
+         ({                                                              \
 diff --git a/src/libsystemd/sd-journal/journal-send.c b/src/libsystemd/sd-journal/journal-send.c
-index 1e10ed5524..e6ceba54f9 100644
+index db53dd7deb..cfeffc96cd 100644
 --- a/src/libsystemd/sd-journal/journal-send.c
 +++ b/src/libsystemd/sd-journal/journal-send.c
 @@ -2,7 +2,6 @@
@@ -431,5 +431,5 @@ index 1e10ed5524..e6ceba54f9 100644
  #define SNDBUF_SIZE (8*1024*1024)
  
 -- 
-2.35.1
+2.39.0
 

@@ -1,0 +1,32 @@
+From 7829d84629156fa1f071986b52427c426128cf1a Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Sun, 16 Oct 2022 12:49:46 +0200
+Subject: [PATCH 22/23] musl: Fix compilation without utmp
+
+---
+ src/test/test-utmp.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/test/test-utmp.c b/src/test/test-utmp.c
+index 06a0fce764..b6e28726bd 100644
+--- a/src/test/test-utmp.c
++++ b/src/test/test-utmp.c
+@@ -17,6 +17,8 @@
+ #  define UT_HOSTSIZE     256
+ #endif
+ 
++#if ENABLE_UTMP
++
+ TEST(dump_run_utmp) {
+         _unused_ _cleanup_(utxent_cleanup) bool utmpx = false;
+ 
+@@ -55,4 +57,6 @@ TEST(dump_run_utmp) {
+         }
+ }
+ 
++#endif
++
+ DEFINE_TEST_MAIN(LOG_DEBUG);
+-- 
+2.39.0
+

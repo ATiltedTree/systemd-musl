@@ -1,7 +1,7 @@
-From a6f32985ab32ad56e1181c33b1db99d1b22510ef Mon Sep 17 00:00:00 2001
+From e95cd1982171b80610d96b8bf171b76fa8951c5f Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:05:33 +0100
-Subject: [PATCH 08/21] replace kernel with userspace header
+Subject: [PATCH 07/23] replace kernel with userspace header
 
 ---
  src/basic/missing_prctl.h | 2 +-
@@ -21,5 +21,5 @@ index ab851306ba..c526c18916 100644
  /* 58319057b7847667f0c9585b9de0e8932b0fdb08 (4.3) */
  #ifndef PR_CAP_AMBIENT
 -- 
-2.35.1
+2.39.0
 

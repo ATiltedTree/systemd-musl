@@ -1,15 +1,14 @@
-From c2ed412e9f8bbac396c3d10355c7336026addada Mon Sep 17 00:00:00 2001
+From 1ba7fea90896135a36e9fdf683cb4442117bd9e6 Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:08:18 +0100
-Subject: [PATCH 13/21] fixup casts
+Subject: [PATCH 11/23] fixup casts
 
 ---
  src/basic/recurse-dir.c | 2 +-
- src/basic/stat-util.c   | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/basic/recurse-dir.c b/src/basic/recurse-dir.c
-index efa1797b7b..9d6a3fdab4 100644
+index d16ca98f67..c58b732c88 100644
 --- a/src/basic/recurse-dir.c
 +++ b/src/basic/recurse-dir.c
 @@ -54,7 +54,7 @@ int readdir_all(int dir_fd,
@@ -21,19 +20,6 @@ index efa1797b7b..9d6a3fdab4 100644
                  if (n < 0)
                          return -errno;
                  if (n == 0)
-diff --git a/src/basic/stat-util.c b/src/basic/stat-util.c
-index efac7b002e..9e1fe7f5a0 100644
---- a/src/basic/stat-util.c
-+++ b/src/basic/stat-util.c
-@@ -99,7 +99,7 @@ int dir_is_empty_at(int dir_fd, const char *path) {
-                         return fd;
-         }
- 
--        n = getdents64(fd, &buffer, sizeof(buffer));
-+        n = getdents64(fd, (struct dirent *)&buffer, sizeof(buffer));
-         if (n < 0)
-                 return -errno;
- 
 -- 
-2.35.1
+2.39.0
 

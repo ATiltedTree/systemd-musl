@@ -1,0 +1,37 @@
+From d19013ae343eb1efccb202b9da500714643da929 Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Sun, 16 Oct 2022 12:49:37 +0200
+Subject: [PATCH 21/23] musl: Add missing includes
+
+---
+ src/boot/bootctl.c      | 1 +
+ src/portable/portable.c | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/src/boot/bootctl.c b/src/boot/bootctl.c
+index 7da48b4ca4..7637c968b9 100644
+--- a/src/boot/bootctl.c
++++ b/src/boot/bootctl.c
+@@ -8,6 +8,7 @@
+ #include <stdbool.h>
+ #include <stdlib.h>
+ #include <sys/mman.h>
++#include <sys/user.h>
+ #include <unistd.h>
+ 
+ #include "sd-id128.h"
+diff --git a/src/portable/portable.c b/src/portable/portable.c
+index 570751f05b..1753bbf27f 100644
+--- a/src/portable/portable.c
++++ b/src/portable/portable.c
+@@ -1,6 +1,7 @@
+ /* SPDX-License-Identifier: LGPL-2.1-or-later */
+ 
+ #include <linux/loop.h>
++#include <sys/file.h>
+ 
+ #include "bus-common-errors.h"
+ #include "bus-error.h"
+-- 
+2.39.0
+

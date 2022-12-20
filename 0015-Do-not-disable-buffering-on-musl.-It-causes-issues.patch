@@ -1,14 +1,14 @@
-From 1750407d38ab3f243e3979f00f6ebcd850ac9015 Mon Sep 17 00:00:00 2001
+From 38066ddaef2d6ce713ea3f5e28c272d2208d628d Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Fri, 7 Jan 2022 21:57:57 +0100
-Subject: [PATCH 19/21] Do not disable buffering on musl. It causes issues.
+Subject: [PATCH 15/23] Do not disable buffering on musl. It causes issues.
 
 ---
  src/basic/fileio.c | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/src/basic/fileio.c b/src/basic/fileio.c
-index 8d92da327e..18d7e0754d 100644
+index 2c4ba89a15..03f53b44a9 100644
 --- a/src/basic/fileio.c
 +++ b/src/basic/fileio.c
 @@ -305,9 +305,10 @@ int write_string_file_ts(
@@ -24,5 +24,5 @@ index 8d92da327e..18d7e0754d 100644
          r = write_string_stream_ts(f, line, flags, ts);
          if (r < 0)
 -- 
-2.35.1
+2.39.0
 

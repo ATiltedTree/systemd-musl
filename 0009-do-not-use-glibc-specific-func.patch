@@ -1,17 +1,17 @@
-From a7ea3cc7340ac7604791a13fd40bad4d5acf5fbd Mon Sep 17 00:00:00 2001
+From c88c7b57f504b8aa43d3093945bf234572ecc62c Mon Sep 17 00:00:00 2001
 From: Tilmann Meyer <me@atiltedtree.dev>
 Date: Thu, 6 Jan 2022 23:07:24 +0100
-Subject: [PATCH 11/21] do not use glibc specific func
+Subject: [PATCH 09/23] do not use glibc specific func
 
 ---
  src/import/curl-util.c | 11 +++--------
  1 file changed, 3 insertions(+), 8 deletions(-)
 
 diff --git a/src/import/curl-util.c b/src/import/curl-util.c
-index d6a16b4f57..f0ea659e5e 100644
+index c124c985b9..f62bf85d13 100644
 --- a/src/import/curl-util.c
 +++ b/src/import/curl-util.c
-@@ -352,7 +352,6 @@ int curl_header_strdup(const void *contents, size_t sz, const char *field, char
+@@ -348,7 +348,6 @@ int curl_header_strdup(const void *contents, size_t sz, const char *field, char
  }
  
  int curl_parse_http_time(const char *t, usec_t *ret) {
@@ -19,7 +19,7 @@ index d6a16b4f57..f0ea659e5e 100644
          const char *e;
          struct tm tm;
          time_t v;
-@@ -360,18 +359,14 @@ int curl_parse_http_time(const char *t, usec_t *ret) {
+@@ -356,18 +355,14 @@ int curl_parse_http_time(const char *t, usec_t *ret) {
          assert(t);
          assert(ret);
  
@@ -42,5 +42,5 @@ index d6a16b4f57..f0ea659e5e 100644
                  return -EINVAL;
  
 -- 
-2.35.1
+2.39.0
 

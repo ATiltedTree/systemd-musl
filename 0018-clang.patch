@@ -1,0 +1,26 @@
+From 57f8e124065922f1ab09b1dac16986222fbf336f Mon Sep 17 00:00:00 2001
+From: Tilmann Meyer <me@atiltedtree.dev>
+Date: Sat, 14 May 2022 14:26:20 +0200
+Subject: [PATCH 18/23] clang
+
+---
+ src/boot/efi/meson.build | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/src/boot/efi/meson.build b/src/boot/efi/meson.build
+index 0de43993a4..21218bdf94 100644
+--- a/src/boot/efi/meson.build
++++ b/src/boot/efi/meson.build
+@@ -454,8 +454,7 @@ foreach tuple : [['systemd-boot@0@.@1@', systemd_boot_objects, false, 'systemd-b
+                            efi_ldflags,
+                            '@INPUT@',
+                            '-lefi',
+-                           '-lgnuefi',
+-                           '-lgcc'],
++                           '-lgnuefi'],
+                 install : tuple[2],
+                 install_tag: tuple[3],
+                 install_dir : bootlibdir)
+-- 
+2.39.0
+
